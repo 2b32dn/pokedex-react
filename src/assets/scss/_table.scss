@@ -1,0 +1,54 @@
+@use "variables" as *;
+
+.pkmn-l-table {
+  padding: 0 1rem;
+}
+
+.pkmn-c-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid $main-gray;
+  border-bottom: 1px solid $main-gray;
+
+  .pkmn-c-thead {
+    background: $main-gray-5;
+
+    .pkmn-c-tr {
+      border-top: 1px solid $main-gray-10;
+      border-bottom: 1px solid $main-gray-10;
+
+      .pkmn-c-th {
+        padding: 0.5rem;
+        text-align: left;
+
+        &:not(:last-child){
+          border-right: 1px solid $main-gray-10;
+        }
+      }
+    }
+  }
+
+  .pkmn-c-tbody {
+
+    .pkmn-c-tr {
+      border-bottom: 1px solid $main-gray-10;
+
+      &__ability {
+        // padding: 1rem;
+      }
+
+      .pkmn-c-td {
+        padding: 0.5rem;
+
+        &:nth-child(n+3):nth-child(-n+9) {
+          text-align: center;
+        }
+
+        &__image {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

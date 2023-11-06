@@ -1,0 +1,50 @@
+@use "index" as *;
+@use "table";
+@use "button";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: gray;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pkmn-l-container {
+  margin: auto;
+  max-width: 87rem;
+  width: 100%;
+}
+
+.pkmn-l-flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--row-gap {
+    gap: 0.5rem;
+  }
+}
+
+.pkmn-is-not-active {
+  display: none !important;
+}
+
+// progress {
+//   background-color: transparent;
+
+//   &::-webkit-progress-value {
+//     background-color: green;
+//   }
+// }
