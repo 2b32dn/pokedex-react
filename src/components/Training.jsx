@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { Capitalize } from "../tools/tools";
+import { Capitalize, statStringConverter } from "../tools/tools";
 
 export function Training({ singlePokemon, singlePokemonSpecies }) {
   // console.log(singlePokemon)
@@ -12,7 +12,6 @@ export function Training({ singlePokemon, singlePokemonSpecies }) {
     }
   }
   const evs = stats.filter(evYield);
-  console.log(evs)
 
   const maleRatio = (num) => {
     return (1 - (num / 8)) * 100
@@ -29,12 +28,25 @@ export function Training({ singlePokemon, singlePokemonSpecies }) {
         <tbody>
           <tr>
             <th>
+              EV Yield
+            </th>
+            <td>
+              {evs.map(ev => (
+                <span className="pkmn-l-margin-right-xsmall">
+                  {ev.effort + " "}
+                  {statStringConverter(ev.stat.name)}
+                </span>
+              ))}
+            </td>
+          </tr>
+          <tr>
+            <th>
               Egg Group
             </th>
             <td>
               {singlePokemonSpecies.egg_groups.map(group => (
                 <span>
-                  {group.name}
+                  {group.name + " "}
                 </span>
               ))}
             </td>
@@ -70,27 +82,12 @@ export function Training({ singlePokemon, singlePokemonSpecies }) {
           </tr>
           <tr>
             <th>
-              EV Yield
-            </th>
-            <td>
-              {evs.map(ev => (
-                <>
-                  <span>
-                    {ev.effort}
-                  </span>
-                  <span>
-                    {ev.stat.name}
-                  </span>
-                </>
-              ))}
-            </td>
-          </tr>
-          <tr>
-            <th>
               Egg Cycles
             </th>
             <td>
-              {singlePokemonSpecies.hatch_counter}
+              {singlePokemonSpecies.hatch_counter * 255}
+              -
+              {singlePokemonSpecies.hatch_counter * 257}
             </td>
           </tr>
         </tbody>

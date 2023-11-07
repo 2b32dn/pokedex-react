@@ -34,6 +34,17 @@ export const Nidoran = (str) => {
   }
 };
 
+export const statStringConverter = (str) => {
+  switch (str) {
+    case "special-attack":
+      return "Sp. Atk";
+    case "special-defense":
+      return "Sp. Def";
+    default:
+      return str;
+  }
+};
+
 export const UrlRemover = (str) => {
   return str
     .replace(/\//g, "")
@@ -67,4 +78,5 @@ export default {
   MaxEv,
   MinHP,
   MaxHP,
+  statStringConverter,
 };

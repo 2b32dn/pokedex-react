@@ -48,3 +48,9 @@ a {
 //     background-color: green;
 //   }
 // }
+
+.pkmn-l-margin{
+  &-right-xsmall {
+    margin-right: 0.5rem;
+  }
+}
