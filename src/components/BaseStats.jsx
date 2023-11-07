@@ -12,8 +12,6 @@ export function BaseStats({ singlePokemon }) {
   stats.map(stat => arr.push(stat.base_stat))
   const totalBaseStat = arr.reduce(sum)
 
-  const HP = stats[0].base_stat
-
   return (
     <div>
       <h2>Base Stats</h2>

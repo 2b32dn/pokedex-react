@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import { SinglePokemonPage } from "./pages/SinglePokemonPage.jsx";
 import { Type } from "./pages/Type.jsx";
 
-const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=251";
+const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
