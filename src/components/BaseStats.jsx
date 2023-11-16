@@ -19,11 +19,11 @@ export function BaseStats({ singlePokemon }) {
         <tbody>
           {stats.slice(0, 1).map(stat => {
             return (
-              <tr>
+              <tr key={stat.stat.name}>
                 <th>{Capitalize(stat.stat.name)}</th>
                 <td>{stat.base_stat}</td>
                 <td>
-                  <label for={stat.stat.name} className="pkmn-is-not-active">Stat progress bar</label>
+                  <label htmlFor={stat.stat.name} className="pkmn-is-not-active">Stat progress bar</label>
                   <progress id={stat.stat.name} value={(stat.base_stat / 120) * 120} max="120"></progress>
                 </td>
                 <td>{MinHP(stat.base_stat)}</td>
@@ -33,11 +33,11 @@ export function BaseStats({ singlePokemon }) {
           })}
           {stats.slice(1).map(stat => {
             return (
-              <tr>
+              <tr key={stat.stat.name}>
                 <th>{Capitalize(stat.stat.name)}</th>
                 <td>{stat.base_stat}</td>
                 <td>
-                  <label for={stat.stat.name} className="pkmn-is-not-active">Stat progress bar</label>
+                  <label htmlFor={stat.stat.name} className="pkmn-is-not-active">Stat progress bar</label>
                   <progress id={stat.stat.name} value={(stat.base_stat / 120) * 120} max="120"></progress>
                 </td>
                 <td>{MinEv(stat.base_stat)}</td>

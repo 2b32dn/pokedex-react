@@ -22,7 +22,7 @@ export function BasicInformation({ singlePokemonSpecies, singlePokemon }) {
           <td>
             <div className="pkmn-l-flex pkmn-l-flex--row-gap">
               {singlePokemon.types.map(types => (
-                <Link to={`/pokemon/type/${types.type.name}`}>
+                <Link key={singlePokemon.id + types.type.name} to={`/pokemon/type/${types.type.name}`}>
                   <button className={`pkmn-c-btn pkmn-c-btn--${types.type.name}`}>
                     {types.type.name}
                   </button>
@@ -36,7 +36,7 @@ export function BasicInformation({ singlePokemonSpecies, singlePokemon }) {
           <td>
             {singlePokemonSpecies.genera.map(genus => {
               if (genus.language.name == "en") {
-                return <span>
+                return <span key={singlePokemon.id + genus.genus}>
                   {genus.genus}
                 </span>
               }
@@ -66,10 +66,10 @@ export function BasicInformation({ singlePokemonSpecies, singlePokemon }) {
               {singlePokemon.abilities.map(ability => {
                 if (!ability.is_hidden) {
                   return (
-                    <span className="pkmn-c-tr__ability">{Capitalize(ability.ability.name)}</span>
+                    <span key={singlePokemon.id + ability.ability.name} className="pkmn-c-tr__ability">{Capitalize(ability.ability.name)}</span>
                   )
                 } else {
-                  return <span className="pkmn-c-tr__ability-hidden">{Capitalize(ability.ability.name) + " (hidden ability)"}</span>
+                  return <span key={singlePokemon.id + ability.ability.name} className="pkmn-c-tr__ability-hidden">{Capitalize(ability.ability.name) + " (hidden ability)"}</span>
                 }
               }
               )}

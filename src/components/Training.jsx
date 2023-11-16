@@ -3,7 +3,7 @@ import { Capitalize, statStringConverter } from "../tools/tools";
 
 export function Training({ singlePokemon, singlePokemonSpecies }) {
   // console.log(singlePokemon)
-  console.log(singlePokemonSpecies)
+  // console.log(singlePokemonSpecies)
 
   const stats = singlePokemon.stats;
   const evYield = (stat) => {
@@ -32,7 +32,7 @@ export function Training({ singlePokemon, singlePokemonSpecies }) {
             </th>
             <td>
               {evs.map(ev => (
-                <span className="pkmn-l-margin-right-xsmall">
+                <span key={ev.stat.name} className="pkmn-l-margin-right-xsmall">
                   {ev.effort + " "}
                   {statStringConverter(ev.stat.name)}
                 </span>
@@ -45,7 +45,7 @@ export function Training({ singlePokemon, singlePokemonSpecies }) {
             </th>
             <td>
               {singlePokemonSpecies.egg_groups.map(group => (
-                <span>
+                <span key={group.name}>
                   {group.name + " "}
                 </span>
               ))}
