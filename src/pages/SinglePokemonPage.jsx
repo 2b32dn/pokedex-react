@@ -4,7 +4,8 @@ import { Capitalize, NumberPadding } from "../tools/tools";
 import { EvolutionChain } from "../components/EvolutionChain";
 import { BasicInformation } from "../components/BasicInformation";
 import { BaseStats } from "../components/BaseStats";
-import { Training } from "../components/Training"
+import { Training } from "../components/Training";
+import { PokedexEntries } from "../components/PokedexEntries";
 
 export function SinglePokemonPage({ pokemon }) {
   const { id } = useParams();
@@ -57,6 +58,9 @@ export function SinglePokemonPage({ pokemon }) {
       <div className="pkmn-l-flex">
         <BaseStats singlePokemon={singlePokemon} />
         <Training singlePokemon={singlePokemon} singlePokemonSpecies={singlePokemonSpecies} />
+      </div>
+      <div className="pkmn-l-flex">
+        <PokedexEntries singlePokemon={singlePokemon} singlePokemonSpecies={singlePokemonSpecies} />
       </div>
     </div>
   )
