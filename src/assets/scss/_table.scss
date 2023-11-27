@@ -10,6 +10,9 @@
   border-top: 1px solid $main-gray;
   border-bottom: 1px solid $main-gray;
 
+  &--border-none {
+    border: none;
+  }
   .pkmn-c-thead {
     background: $main-gray-5;
 
